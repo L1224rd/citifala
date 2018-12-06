@@ -23,7 +23,7 @@ $('document').ready(() => {
       $.get('/fala', (res) => {
         $('#fala').html('');
         res.forEach(person => {
-          $('#fala').append(`<p>${person.name}${eleicao === 'yes' ? ` - ${person.level}` : ''}</p>`);
+          $('#fala').append(`<li>${person.name}${eleicao === 'yes' ? ` - ${person.level}` : ''}</li>`);
         });
       });
     }, 1000);

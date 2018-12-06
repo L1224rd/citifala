@@ -59,7 +59,7 @@ app.get('/proximo_remove', (req, res) => {
 
 app.get('/change_eleicao/:status', (req, res) => {
   eleicao = req.params.status;
-  res.send('ok');
+  res.redirect('/');
 });
 
 app.post('/', (req, res) => {
