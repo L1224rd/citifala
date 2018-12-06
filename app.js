@@ -11,6 +11,7 @@ const bodyParser = require('body-parser');
 const app = express();
 
 const fala = [];
+let eleicao = 'no';
 
 // ==================== MIDDLEWARE ==================== //
 
@@ -48,11 +49,16 @@ app.get('/fala', (req, res) => {
 });
 
 app.get('/eleicao', (req, res) => {
-  res.send('no');
+  res.send(eleicao);
 });
 
 app.get('/proximo_remove', (req, res) => {
   fala.shift();
+  res.send('ok');
+});
+
+app.get('/change_eleicao/:status', (req, res) => {
+  eleicao = req.params.status;
   res.send('ok');
 });
 
